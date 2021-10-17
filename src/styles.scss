@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {padding-top: 0px; padding-bottom: 20px;}
+
+div#main-container {
+  width: 900px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+mat-card.item , mat-paginator {
+  margin-bottom: 10px;
+}

@@ -1,0 +1,26 @@
+<h1 class="mb-3">Search for Pokemons</h1>
+
+<form>
+  <mat-form-field appearance="outline">
+    <mat-label>Search</mat-label>
+    <input type="text" (keyup)="updateSearch($event)" matInput>
+  </mat-form-field>
+</form>
+
+<mat-paginator [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
+  (page)="onPaginationChange($event)" aria-label="Select page">
+</mat-paginator>
+<hr><br>
+<div class="container">
+  <div id="errorMsg">Sorry :/ No result matches your search.</div>
+  <div id="pokemonList">
+    <mat-card class="item" *ngFor="let pokemon of pokemonListPage">
+      <mat-card-title class="inner-card-item">{{pokemon.name |titlecase}}</mat-card-title>
+      <mat-card-actions class="inner-card-item">
+        <button type="button" mat-stroked-button color="primary" routerLink="{{pokemon.name}}">View details</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
+
+<mat-spinner></mat-spinner>
